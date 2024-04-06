@@ -10,6 +10,7 @@ const sanbud_lots = {
         "Description": "Plac pomiędzy ogrodzeniem a budynkiem \"Titanic\", w bezpośrednim sąsiedztwie bramy wjazdowej od ulicy Targowej.",
         "Availability": "Wolny",
         "Area": "826",
+        "Photo": "img/sanbud-plac2-img.jpg"
     },
     "LOT-3": {
         "Title": "BUDYNEK BIUROWY \"TITANIC\"",
@@ -21,6 +22,8 @@ const sanbud_lots = {
         "Description": "Plac z indywidualnym ogrodzeniem i własną bramą wjazdową.",
         "Availability": "Wolny",
         "Area": "845",
+        "Photo": "img/sanbud-plac3-img.jpg",
+        "Link": "https://www.olx.pl/d/oferta/wynajme-plac-w-sanoku-dabrowce-CID3-IDWlrEH.html?fbclid=IwAR1kAmEcy3nchEwF128CIcN1oUvBPyOjk2RBnSFsYOYSpqDliVRGK0yOO3o"
     },
     "LOT-5": {
         "Title": "PLAC 4",
@@ -31,7 +34,7 @@ const sanbud_lots = {
     "LOT-6": {
         "Title": "BUDYNEK PRZEMYSŁOWO-USŁUGOWY",
         "Description": "Budynek z wydzieloną częścią biurową, produkcyjną i magazynową.",
-        "Availability": "Wynajęty",
+        "Availability": "Wydzierżawiony",
         "Area": "269",
     },
     "LOT-7": {
@@ -45,6 +48,7 @@ const sanbud_lots = {
         "Description": "Plac uposażony w wagę. W jego skład wchodzi parking do części sklepowej budynku głównego.",
         "Availability": "Wolny",
         "Area": "561",
+        "Photo": "img/sanbud-plac6-img.jpg"
     },
     "LOT-9": {
         "Title": "BUDYNEK GŁÓWNY",
@@ -60,6 +64,7 @@ const sanbud_lots = {
         "Description": "Przestrzeń przeznaczona do prowadzenia sprzedaży. W jej skład wchodzi również zaplecze z biurem oraz częścią sanitarną. Powierzchnia obiektu wynosi 250 m2 (powierzchnia usługowa oraz biuro) + 25 m2 (toaleta, prysznic, część socjalna).",
         "Availability": "Wolny",
         "Area": "275",
+        "Photo": "img/sanbud-bg-img.jpg",
         "Link": "https://www.olx.pl/d/oferta/wynajme-lokal-uslugowy-w-sanoku-dabrowce-CID3-IDWlscF.html?fbclid=IwAR0N_CdyA8SMBKwey4GpYLhRsxsv_-OPv5iRei1fthr76yiq2hcaV6wwYsE"
     },
     "LOT-11": {
@@ -67,6 +72,7 @@ const sanbud_lots = {
         "Description": "Duży plac z bezpośrednim dostępem do bramy wjazdowej od ulicy Kujawskiej.",
         "Availability": "Wolny",
         "Area": "1548",
+        "Photo": "img/sanbud-plac7-img.jpg",
         "Link": "https://www.olx.pl/d/oferta/wynajme-plac-w-sanoku-dabrowce-CID3-IDWlrEH.html?fbclid=IwAR1kAmEcy3nchEwF128CIcN1oUvBPyOjk2RBnSFsYOYSpqDliVRGK0yOO3o"
     },
     "LOT-12": {
@@ -98,6 +104,8 @@ const sanbud_lots = {
         "Description": "Plac przy bramie wjazdowej od strony ulicy Kujawskiej.",
         "Availability": "Wolny",
         "Area": "533",
+        "Photo": "img/sanbud-plac10-img.jpg",
+        "Link": "https://www.olx.pl/d/oferta/wynajme-plac-w-sanoku-dabrowce-CID3-IDWlrEH.html?fbclid=IwAR1kAmEcy3nchEwF128CIcN1oUvBPyOjk2RBnSFsYOYSpqDliVRGK0yOO3o"
     },
     "ROAD": {
         "Title": "DROGA WEWNĘTRZNA",
@@ -201,6 +209,7 @@ function sidePanel(id) {
     let area = panel.querySelector("#panel-area");
     let link = panel.querySelector("#panel-link");
     let link_a = panel.querySelector("#panel-link-a");
+    let photo = panel.querySelector("#panel-photo");
 
     // FILL MAIN INFO
     let lot_title = sanbud_lots[id]["Title"];
@@ -251,5 +260,13 @@ function sidePanel(id) {
         link_a.setAttribute("href", lot_link);
     } else {
         link.style.display = "none";
+    }
+
+    if (sanbud_lots[id].hasOwnProperty('Photo')) {
+        let lot_photo = sanbud_lots[id]["Photo"];
+        photo.style.display = "block";
+        photo.setAttribute("src", lot_photo);
+    } else {
+        photo.style.display = "none";
     }
 }

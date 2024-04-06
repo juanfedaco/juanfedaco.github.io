@@ -5,14 +5,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 
 /* || BODY - GLOBAL SETTINGS */
+:root {
+    --sanbud-light-blue: #669bbc;
+    --sanbud-dark-blue: #274c77;
+    --sanbud-red: #ba324f;
+    --sanbud-white: #eff2f1;
+    --sanbud-gray: #555555;
+    --sanbud-yellow: #f9bf29;
+}
 
 body {
     font-family: "Inter", sans-serif;
     font-weight: 400;
     line-height: 28px;
-    color: #555555;
+    color: var(--sanbud-gray);;
     font-size: 16px;
-    background-color: #eff2f1;
+    background-color: var(--sanbud-white);
     position: relative;
 }
 
@@ -33,12 +41,12 @@ a.more {
     font-weight: 600;
 }
 
-.yellow-highlight {
-    color: #f9bf29;
+.blue-highlight {
+    color: var(--sanbud-dark-blue);
 }
 
 .green-highlight {
-    color: #3b5d50;
+    color: var(--sanbud-light-blue);
 }
 
 /* || NAVBAR */
@@ -48,7 +56,7 @@ a.more {
 }
 
 .custom-navbar {
-    background: #3b5d50 !important;
+    background: var(--sanbud-light-blue) !important;
     padding-top: 20px;
     padding-bottom: 20px;
 }
@@ -56,7 +64,7 @@ a.more {
 .custom-navbar .navbar-brand {
     font-size: 32px;
     font-weight: 600;
-    color: #ffffff;
+    color: var(--sanbud-white);
 }
 
 .custom-navbar .navbar-toggler {
@@ -78,7 +86,7 @@ a.more {
 
 .custom-navbar .custom-navbar-nav li a {
     font-weight: 500;
-    color: #ffffff !important;
+    color: var(--sanbud-white) !important;
     opacity: .7;
     transition: .3s all ease;
     position: relative;
@@ -91,7 +99,7 @@ a.more {
         bottom: 0;
         left: 8px;
         right: 8px;
-        background: #f9bf29;
+        background: var(--sanbud-red);
         height: 5px;
         opacity: 1;
         visibility: visible;
@@ -139,7 +147,7 @@ a.more {
 /* || NAVBAR SCROLLED */
 
 .custom-navbar-scrolled {
-    background: #eff2f1 !important;
+    background: var(--sanbud-white) !important;
     padding-top: 20px;
     padding-bottom: 20px;
 }
@@ -147,7 +155,7 @@ a.more {
 .custom-navbar-scrolled .navbar-brand {
     font-size: 32px;
     font-weight: 600;
-    color: #3b5d50;
+    color: var(--sanbud-dark-blue);;
 }
 
 .custom-navbar-scrolled .navbar-toggler {
@@ -182,7 +190,7 @@ a.more {
         bottom: 0;
         left: 8px;
         right: 8px;
-        background: #3b5d50;
+        background: var(--sanbud-dark-blue);;
         height: 5px;
         opacity: 1;
         visibility: visible;
@@ -230,7 +238,7 @@ a.more {
 /* || INTRO SECTION */
 
 .intro {
-    background: #3b5d50;
+    background: var(--sanbud-light-blue);;
     padding: calc(4rem - 30px) 0 0rem 0;
     margin-top: 80px;
     overflow: hidden;
@@ -259,6 +267,10 @@ a.more {
     }
 }
 
+#contact-us {
+    color:#f8f7ff;
+}
+
 .intro h1 {
     font-weight: 700;
     color: #ffffff;
@@ -285,8 +297,8 @@ a.more {
     top: -10px;
     right: 0px;
     z-index: 2;
-    max-width: 500px;
-    left: -20px;
+    max-width: 400px;
+    left: 0px;
     mask: url(/img/fluid-mask.png) center/contain no-repeat;
 }
 
@@ -311,7 +323,7 @@ a.more {
 @media (min-width: 1200px) {
     .intro .intro-img-wrap img {
         left: 0px;
-        top: -80px;
+        top: -100px;
         right: -100px;
         max-width: 650px;
     }
@@ -341,8 +353,8 @@ a.more {
 }
 
 .btn.btn-primary {
-    background: #3b5d50;
-    border-color: #3b5d50;
+    background: var(--sanbud-light-blue);;
+    border-color: var(--sanbud-light-blue);;
 }
 
 .btn.btn-primary:hover {
@@ -352,13 +364,13 @@ a.more {
 
 .btn.btn-secondary {
     color: #2f2f2f;
-    background: #f9bf29;
-    border-color: #f9bf29;
+    background: var(--sanbud-dark-blue);
+    border-color: var(--sanbud-dark-blue);
 }
 
 .btn.btn-secondary:hover {
-    background: #f8b810;
-    border-color: #f8b810;
+    background: var(--sanbud-red);
+    border-color: var(--sanbud-red);
 }
 
 .btn.btn-white-outline {
@@ -372,20 +384,6 @@ a.more {
     color: #ffffff;
 }
 
-/* || TECH STACK */
-
-.stack {
-    padding: 5px;
-}
-
-.stack .tech-stack {
-    border-radius: 30px;
-    color: #2f2f2f;
-    background: #f8b810;
-    border-color: #f8b810;
-    padding: 0.3rem 0.8rem;
-    font-weight: 500;
-}
 
 /* || DEFAULT SECTION*/
 
@@ -475,7 +473,7 @@ a.more {
 
 /* || SANBUD PLAN */
 #Hoverable path:hover {
-    fill: #f9bf29;
+    fill: var(--sanbud-yellow);
 }
 
 #oferta a:hover {
@@ -491,6 +489,11 @@ a.more {
     border-radius: 0.5rem;
     font-family: "Source Code Pro", monospace;
     max-width: 25rem;
+}
+
+#panel-photo {
+    max-width: 100%;
+    border-radius: 0.5rem;
 }
 
 /* || CONTACT SECTION */
@@ -520,7 +523,7 @@ a.more {
     height: 44px;
     font-size: 20px;
     color: white;
-    background: #3b5d50;
+    background: var(--sanbud-dark-blue);;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -535,8 +538,8 @@ a.more {
 
 .contact .email:hover i,
 .contact .phone:hover i {
-    background: #f9bf29;
-    color: black;
+    background: var(--sanbud-light-blue);
+    color: white;
 }
 
 .contact .address {
